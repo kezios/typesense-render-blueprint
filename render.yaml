@@ -1,10 +1,9 @@
 services:
 - type: web
   name: typesense
-  env: docker
-  repo: https://github.com/hmbrg/typesense-on-render.git
+  runtime: docker
+  repo: https://github.com/kezios/typesense-render-blueprint
   plan: starter
-  region: frankfurt
   healthCheckPath: /health
   disk:
     name: typesense-data
@@ -16,4 +15,4 @@ services:
   - key: TYPESENSE_DATA_DIR
     value: /typesense-data
   - key: TYPESENSE_ENABLE_CORS
-    value: true
+    value: "true"
